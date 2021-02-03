@@ -1,0 +1,22 @@
+name: Build and Run
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: nasm
+      run: nasm -f elf32 -o helloworld.o helloworld.s
+
+    - name: ld
+      run: ld -m elf_i386 -o helloworld helloworld.o
+
+    - name: run
+      run: ./helloworld
