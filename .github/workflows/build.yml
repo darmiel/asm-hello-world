@@ -11,6 +11,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      
+    - name: Install nasm
+      run: apt-get install nasm
 
     - name: nasm
       run: nasm -f elf32 -o helloworld.o helloworld.s
