@@ -28,5 +28,5 @@ _start:
 
 section .txt:
 	str_hw: db "Hello World! :)", 0xA
-	len_hw: equ $-str_helloworld
+	len_hw: equ $-str_hw
 
